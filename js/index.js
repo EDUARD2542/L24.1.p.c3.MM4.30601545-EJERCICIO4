@@ -20,13 +20,15 @@ const estudiantes = [
   const insertarEstudEnPosicion = (estudiantes, nombre, semestre, nota, posicion) => {
     estudiantes.splice(posicion, 0, { nombre, semestre, nota });
     return estudiantes;
-  };//array modificado con solo nombres//
+  };
 
   let salida = document.getElementById("salida");
+  salida.innerHTML = "ANTES DEL ARREGLO: "+     estudiantes.map((estudiante) => estudiante.nombre).join(", ");
 
   let estudiantesModificados = insertarEstudEnPosicion(estudiantes, "Alberto", 5, 14, 3);
 
-  salida.innerHTML = estudiantesModificados.map((estudiante) => estudiante.nombre).join(", ");
+  salida.innerHTML += "<br>LUEGO DEL ARREGLO: "+estudiantesModificados.map((estudiante) => estudiante.nombre).join(", ");
+
 
   
 
